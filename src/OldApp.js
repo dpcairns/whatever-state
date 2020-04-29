@@ -7,10 +7,13 @@ class Counter extends Component {
    }
 
   handleClick = () => {
-      this.setState({ 
-        counter: this.state.counter + 1,
-        color: `rgb(${Math.floor(Math.random() * 200)},${Math.floor(Math.random() * 200)},${Math.floor(Math.random() * 200)})`
-       })
+      this.setState({ counter: this.state.counter + 1 })
+      
+      if (this.state.color === 'red') {
+        this.setState({ color: 'yellow' })
+      } else { 
+        this.setState({ color: 'red' })
+      }
   }
 
   render() {
